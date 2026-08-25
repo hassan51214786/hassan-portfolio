@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Info, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <motion.main 
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}
@@ -25,10 +28,10 @@ const Home = () => {
           </div>
           
           <div className="flex flex-col gap-4 w-full md:w-64">
-            <button onClick={() => window.location.href='/buy'} className="bg-[#1c69d4] hover:bg-blue-600 text-white text-sm md:text-base font-bold py-4 px-6 transition-colors shadow-lg">
+            <button onClick={() => navigate('/buy')} className="bg-[#1c69d4] hover:bg-blue-600 text-white text-sm md:text-base font-bold py-4 px-6 transition-colors shadow-lg">
               Build and price
             </button>
-            <button onClick={() => window.location.href='/owners'} className="bg-[#444444] hover:bg-gray-600 text-white text-sm md:text-base font-bold py-4 px-6 transition-colors shadow-lg">
+            <button onClick={() => navigate('/owners')} className="bg-[#444444] hover:bg-gray-600 text-white text-sm md:text-base font-bold py-4 px-6 transition-colors shadow-lg">
               Reserve a test drive
             </button>
           </div>
@@ -101,7 +104,7 @@ const Home = () => {
           <div className="relative z-10">
             <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 mb-4">
               <h2 className="text-6xl md:text-8xl font-black italic tracking-tighter text-white">BMW</h2>
-              <button onClick={() => window.location.href='/models'} className="bg-[#1c69d4] hover:bg-blue-600 text-white text-xs md:text-sm font-bold tracking-wider py-4 px-6 md:px-8 rounded-sm transition-colors w-full md:w-auto">
+              <button onClick={() => navigate('/models')} className="bg-[#1c69d4] hover:bg-blue-600 text-white text-xs md:text-sm font-bold tracking-wider py-4 px-6 md:px-8 rounded-sm transition-colors w-full md:w-auto">
                 CHOOSE YOUR CAR
               </button>
             </div>
