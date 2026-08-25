@@ -123,10 +123,10 @@ const AboutBento = () => (
 
 const ProjectsBento = () => {
   const projects = [
-    { name: 'BMW Experience', tags: 'WebGL / R3F / React', link: 'http://localhost:5180', img: '/images/bmw.jpg' },
-    { name: 'SynthOS', tags: 'React Router / Dashboard', link: 'http://localhost:5173', img: '/images/synthos.jpg' },
-    { name: 'Orb Simulation', tags: 'Canvas / Physics', link: 'http://localhost:5176', img: '/images/orb.jpg' },
-    { name: 'A11y Primitives', tags: 'Vanilla JS / Accessibility', link: 'http://localhost:5175', img: '/images/a11y.jpg' },
+    { name: 'BMW Experience', tags: 'WebGL / R3F / React', link: 'https://bmw-experience.vercel.app', img: '/images/bmw.jpg' },
+    { name: 'SynthOS', tags: 'React Router / Dashboard', link: 'https://synthos-omega.vercel.app', img: '/images/synthos.jpg' },
+    { name: 'Orb Simulation', tags: 'Canvas / Physics', link: 'https://orb-tawny.vercel.app', img: '/images/orb.jpg' },
+    { name: 'A11y Primitives', tags: 'Vanilla JS / Accessibility', link: 'https://a11y-primitives.vercel.app', img: '/images/a11y.jpg' },
   ];
 
   return (
