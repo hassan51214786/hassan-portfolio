@@ -28,10 +28,10 @@ const HeroBento = () => (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="md:col-span-2 bg-[#131816] rounded-3xl p-10 flex flex-col justify-between border border-white/5 relative overflow-hidden group hover:border-white/10 transition-colors"
+      className="md:col-span-2 bg-[#131816] rounded-3xl p-6 md:p-10 flex flex-col justify-between border border-white/5 relative overflow-hidden group hover:border-white/10 transition-colors"
     >
-      <div className="flex justify-between items-start mb-16">
-        <h1 className="text-4xl md:text-5xl font-semibold text-white leading-tight">
+      <div className="flex flex-col md:flex-row justify-between items-start mb-12 md:mb-16 gap-6 md:gap-0">
+        <h1 className="text-3xl md:text-5xl font-semibold text-white leading-tight">
           I AM A FRONTEND ENGINEER<br />
           A REACT SPECIALIST<br />
           <span className="text-gray-500">& A CREATIVE DEVELOPER</span>
@@ -40,7 +40,7 @@ const HeroBento = () => (
           href="#contact"
           whileHover={{ scale: 1.1, rotate: 15 }}
           whileTap={{ scale: 0.9 }}
-          className="flex items-center gap-3 cursor-pointer"
+          className="flex items-center gap-3 cursor-pointer self-start md:self-auto"
         >
           <div className="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:border-white transition-colors group-hover:bg-white/5">
             <ArrowUpRight size={20} className="text-white group-hover:text-white transition-colors" />
@@ -50,16 +50,16 @@ const HeroBento = () => (
       </div>
       
       <div>
-        <p className="text-gray-400 text-sm max-w-xl leading-relaxed mb-10 group-hover:text-gray-300 transition-colors">
+        <p className="text-gray-400 text-sm max-w-xl leading-relaxed mb-8 md:mb-10 group-hover:text-gray-300 transition-colors">
           Leveraging years of engineering experience across B2B, SaaS, and creative tech. I deliver high-performance digital solutions that propel businesses toward growth, utilizing React, WebGL, and modern frontend architecture.
         </p>
-        <div className="flex flex-wrap gap-4 text-[10px] font-bold text-gray-500 tracking-widest uppercase">
+        <div className="flex flex-wrap gap-3 md:gap-4 text-[9px] md:text-[10px] font-bold text-gray-500 tracking-widest uppercase">
           <span>Website Design</span>
-          <span>•</span>
+          <span className="hidden md:inline">•</span>
           <span>Creative Coding</span>
-          <span>•</span>
+          <span className="hidden md:inline">•</span>
           <span>UI/UX Engineering</span>
-          <span>•</span>
+          <span className="hidden md:inline">•</span>
           <span>3D WebGL</span>
         </div>
       </div>
@@ -73,11 +73,11 @@ const HeroBento = () => (
       className="md:col-span-1 bg-[#131816] rounded-3xl p-4 border border-white/5 relative group cursor-pointer"
       onClick={() => window.location.href = '#projects'}
     >
-      <div className="w-full h-full rounded-2xl overflow-hidden relative min-h-[300px]">
+      <div className="w-full h-full rounded-2xl overflow-hidden relative min-h-[250px] md:min-h-[300px]">
         <img 
           src="https://images.unsplash.com/photo-1596727147705-61a532a659bd?q=80&w=800&auto=format&fit=crop" 
           alt="Eye" 
-          className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700 absolute inset-0"
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
         <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-white tracking-wider">
@@ -98,23 +98,23 @@ const HeroBento = () => (
 );
 
 const AboutBento = () => (
-  <section id="about" className="w-full max-w-5xl mx-auto mt-6 bg-[#131816] rounded-3xl p-10 border border-white/5 scroll-mt-32 hover:border-white/10 transition-colors">
-    <h2 className="text-sm font-bold text-gray-400 tracking-widest mb-8 uppercase">About Me</h2>
-    <div className="flex flex-col md:flex-row gap-12">
+  <section id="about" className="w-full max-w-5xl mx-auto mt-6 bg-[#131816] rounded-3xl p-6 md:p-10 border border-white/5 scroll-mt-32 hover:border-white/10 transition-colors">
+    <h2 className="text-sm font-bold text-gray-400 tracking-widest mb-6 md:mb-8 uppercase">About Me</h2>
+    <div className="flex flex-col md:flex-row gap-8 md:gap-12">
       <div className="flex-1">
-        <h3 className="text-3xl font-semibold text-white mb-6">Building the future of the web, one pixel at a time.</h3>
-        <p className="text-gray-400 leading-relaxed mb-6">
+        <h3 className="text-2xl md:text-3xl font-semibold text-white mb-4 md:mb-6">Building the future of the web, one pixel at a time.</h3>
+        <p className="text-gray-400 leading-relaxed text-sm md:text-base mb-6">
           I am a passionate software engineer focused on building highly interactive, accessible, and performant web applications. My expertise lies in bridging the gap between intricate design and complex engineering logic.
         </p>
       </div>
-      <div className="flex-1 grid grid-cols-2 gap-6">
-        <div className="bg-[#0a0f0d] p-6 rounded-2xl border border-white/5 flex flex-col justify-center items-center text-center">
-          <h4 className="text-4xl font-black text-white mb-2">5+</h4>
-          <p className="text-xs text-gray-500 font-bold tracking-widest uppercase">Years Exp</p>
+      <div className="flex-1 grid grid-cols-2 gap-4 md:gap-6">
+        <div className="bg-[#0a0f0d] p-4 md:p-6 rounded-2xl border border-white/5 flex flex-col justify-center items-center text-center">
+          <h4 className="text-3xl md:text-4xl font-black text-white mb-2">5+</h4>
+          <p className="text-[10px] md:text-xs text-gray-500 font-bold tracking-widest uppercase">Years Exp</p>
         </div>
-        <div className="bg-[#0a0f0d] p-6 rounded-2xl border border-white/5 flex flex-col justify-center items-center text-center">
-          <h4 className="text-4xl font-black text-white mb-2">40+</h4>
-          <p className="text-xs text-gray-500 font-bold tracking-widest uppercase">Projects</p>
+        <div className="bg-[#0a0f0d] p-4 md:p-6 rounded-2xl border border-white/5 flex flex-col justify-center items-center text-center">
+          <h4 className="text-3xl md:text-4xl font-black text-white mb-2">40+</h4>
+          <p className="text-[10px] md:text-xs text-gray-500 font-bold tracking-widest uppercase">Projects</p>
         </div>
       </div>
     </div>
@@ -130,8 +130,8 @@ const ProjectsBento = () => {
   ];
 
   return (
-    <section id="projects" className="w-full max-w-5xl mx-auto mt-6 bg-[#131816] rounded-3xl p-10 border border-white/5 scroll-mt-32">
-      <h2 className="text-sm font-bold text-gray-400 tracking-widest mb-8 uppercase">Selected Projects</h2>
+    <section id="projects" className="w-full max-w-5xl mx-auto mt-6 bg-[#131816] rounded-3xl p-6 md:p-10 border border-white/5 scroll-mt-32">
+      <h2 className="text-sm font-bold text-gray-400 tracking-widest mb-6 md:mb-8 uppercase">Selected Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((proj, idx) => (
           <motion.div 
@@ -144,17 +144,17 @@ const ProjectsBento = () => {
             onClick={() => window.open(proj.link, '_blank')}
             whileHover={{ y: -5 }}
           >
-            <div className="w-full h-56 rounded-xl overflow-hidden mb-6 relative bg-black">
+            <div className="w-full h-48 md:h-56 rounded-xl overflow-hidden mb-4 md:mb-6 relative bg-black">
               <img src={proj.img} alt={proj.name} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
             </div>
             <div className="flex justify-between items-end px-2 pb-2">
               <div>
-                <h3 className="text-xl font-semibold text-white mb-1">{proj.name}</h3>
-                <p className="text-xs font-bold text-gray-500 tracking-widest uppercase">{proj.tags}</p>
+                <h3 className="text-lg md:text-xl font-semibold text-white mb-1">{proj.name}</h3>
+                <p className="text-[10px] md:text-xs font-bold text-gray-500 tracking-widest uppercase">{proj.tags}</p>
               </div>
               <motion.div 
                 whileHover={{ scale: 1.2, rotate: -45 }}
-                className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center group-hover:bg-[#2c5f4b] group-hover:border-[#2c5f4b] transition-colors"
+                className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-gray-700 flex items-center justify-center group-hover:bg-[#2c5f4b] group-hover:border-[#2c5f4b] transition-colors"
               >
                 <ArrowRight size={16} className="text-white" />
               </motion.div>
@@ -167,20 +167,20 @@ const ProjectsBento = () => {
 };
 
 const ServicesBento = () => (
-  <section id="services" className="w-full max-w-5xl mx-auto mt-6 bg-[#131816] rounded-3xl p-10 border border-white/5 scroll-mt-32 mb-24 hover:border-white/10 transition-colors">
-    <h2 className="text-sm font-bold text-gray-400 tracking-widest mb-8 uppercase">Services</h2>
+  <section id="services" className="w-full max-w-5xl mx-auto mt-6 bg-[#131816] rounded-3xl p-6 md:p-10 border border-white/5 scroll-mt-32 mb-16 md:mb-24 hover:border-white/10 transition-colors">
+    <h2 className="text-sm font-bold text-gray-400 tracking-widest mb-6 md:mb-8 uppercase">Services</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {['Frontend Architecture', '3D WebGL / R3F', 'UI/UX Implementation'].map((svc, i) => (
         <motion.div 
           key={i}
           whileHover={{ scale: 1.02 }}
-          className="bg-[#0a0f0d] p-8 rounded-2xl border border-white/5 cursor-pointer hover:border-white/20 transition-colors group"
+          className="bg-[#0a0f0d] p-6 md:p-8 rounded-2xl border border-white/5 cursor-pointer hover:border-white/20 transition-colors group"
         >
-          <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mb-6 group-hover:bg-[#2c5f4b]/20 transition-colors">
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-[#2c5f4b]/20 transition-colors">
             <CircleDot size={20} className="text-[#4ade80]" />
           </div>
-          <h3 className="text-xl font-semibold text-white mb-4">{svc}</h3>
-          <p className="text-sm text-gray-500">Delivering highly optimized, scalable, and visually stunning solutions tailored to modern web standards.</p>
+          <h3 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4">{svc}</h3>
+          <p className="text-xs md:text-sm text-gray-500">Delivering highly optimized, scalable, and visually stunning solutions tailored to modern web standards.</p>
         </motion.div>
       ))}
     </div>
