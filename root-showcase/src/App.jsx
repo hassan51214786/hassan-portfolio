@@ -1,26 +1,60 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, CircleDot, Github, Linkedin, Mail } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUpRight, ArrowRight, CircleDot, Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 
-const Navbar = () => (
-  <nav className="w-full max-w-5xl mx-auto flex justify-between items-center bg-[#131816] rounded-full px-6 py-4 mt-8 border border-white/5 sticky top-6 z-50 shadow-2xl backdrop-blur-md">
-    <div className="text-white font-bold tracking-wider text-sm">HASSAN</div>
-    <div className="hidden md:flex items-center gap-8 text-xs font-bold text-gray-400 tracking-wider">
-      <a href="#home" className="hover:text-white transition-colors">HOME</a>
-      <a href="#about" className="hover:text-white transition-colors">ABOUT</a>
-      <a href="#projects" className="hover:text-white transition-colors">PROJECTS</a>
-      <a href="#services" className="hover:text-white transition-colors">SERVICES</a>
-    </div>
-    <motion.a 
-      href="#contact"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="bg-[#2c5f4b] hover:bg-[#347259] text-white text-xs font-bold px-6 py-3 rounded-full transition-colors flex items-center gap-2 cursor-pointer"
-    >
-      CONTACT
-    </motion.a>
-  </nav>
-);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <>
+      <nav className="w-full max-w-5xl mx-auto flex justify-between items-center bg-[#131816] rounded-full px-6 py-4 mt-8 border border-white/5 sticky top-6 z-50 shadow-2xl backdrop-blur-md">
+        <div className="text-white font-bold tracking-wider text-sm">HASSAN</div>
+        <div className="hidden md:flex items-center gap-8 text-xs font-bold text-gray-400 tracking-wider">
+          <a href="#home" className="hover:text-white transition-colors">HOME</a>
+          <a href="#about" className="hover:text-white transition-colors">ABOUT</a>
+          <a href="#projects" className="hover:text-white transition-colors">PROJECTS</a>
+          <a href="#services" className="hover:text-white transition-colors">SERVICES</a>
+        </div>
+        <div className="hidden md:block">
+          <motion.a 
+            href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-[#2c5f4b] hover:bg-[#347259] text-white text-xs font-bold px-6 py-3 rounded-full transition-colors flex items-center gap-2 cursor-pointer"
+          >
+            CONTACT
+          </motion.a>
+        </div>
+        <button onClick={() => setIsOpen(true)} className="md:hidden text-white hover:text-[#4ade80]">
+          <Menu size={24} />
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-[100] bg-[#0a0f0d] flex flex-col pt-24 px-8"
+          >
+            <button onClick={() => setIsOpen(false)} className="absolute top-8 right-8 text-white">
+              <X size={32} />
+            </button>
+            <div className="flex flex-col gap-8 text-3xl font-bold text-white tracking-wider">
+              <a href="#home" onClick={() => setIsOpen(false)}>HOME</a>
+              <a href="#about" onClick={() => setIsOpen(false)}>ABOUT</a>
+              <a href="#projects" onClick={() => setIsOpen(false)}>PROJECTS</a>
+              <a href="#services" onClick={() => setIsOpen(false)}>SERVICES</a>
+              <a href="#contact" onClick={() => setIsOpen(false)} className="text-[#4ade80]">CONTACT</a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
 
 const HeroBento = () => (
   <section id="home" className="w-full max-w-5xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 scroll-mt-32">
