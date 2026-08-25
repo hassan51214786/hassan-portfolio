@@ -1,0 +1,218 @@
+:root {
+  --bg-color: #fcfcfc;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+  --primary-color: #6366f1; /* Indigo */
+  --primary-hover: #4f46e5;
+  --focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+kbd {
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  color: #333;
+  display: inline-block;
+  font-size: 0.85em;
+  font-family: monospace;
+  padding: 0.1em 0.4em;
+  white-space: nowrap;
+}
+
+/* Base focus styles for accessibility */
+*:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 2px;
+}
+
+.site-header {
+  padding: 3rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.site-header h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.pattern-section {
+  margin-bottom: 4rem;
+}
+
+.pattern-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 3rem 0;
+}
+
+/* Tabs */
+.tabs-component {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+}
+
+.tablist {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  background: #f1f5f9;
+}
+
+.tablist button {
+  padding: 1rem 1.5rem;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tablist button:hover {
+  color: var(--text-main);
+  background: #e2e8f0;
+}
+
+.tablist button[aria-selected="true"] {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background: white;
+}
+
+.tabpanel {
+  padding: 2rem;
+}
+
+.tabpanel[hidden] {
+  display: none;
+}
+
+/* Buttons */
+.primary-btn, .secondary-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+  background-color: #f1f5f9;
+}
+
+/* Modal */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.dialog-overlay[hidden] {
+  display: none;
+}
+
+.dialog-content {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.dialog-content h3 {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin: 0;
+}
+
+.dialog-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dialog-body label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.dialog-body input, .dialog-body select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dialog-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  background: #f8fafc;
+  border-radius: 0 0 8px 8px;
+}

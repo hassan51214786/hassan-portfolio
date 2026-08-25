@@ -1,0 +1,36 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pageTitle {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.pageDescription {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.chartSection {
+  margin-top: 1rem;
+}
+
+.chartGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.fullPageLog {
+  height: 60vh;
+}

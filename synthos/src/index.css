@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg-base: #0a0a0a;
+  --bg-panel: #111111;
+  --bg-panel-hover: #1a1a1a;
+  --border-subtle: #222222;
+  --border-active: #444444;
+  
+  --text-primary: #ededed;
+  --text-secondary: #888888;
+  
+  --accent-primary: #ffffff;
+  --accent-secondary: #a1a1aa;
+  
+  --status-normal: #3b82f6; /* Slate blue */
+  --status-warning: #eab308;
+  --status-critical: #ef4444;
+
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-active);
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A11y Primitives</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>A11y Primitives</h1>
+      <p>A brutally simple, zero-dependency demonstration of accessible web patterns.</p>
+    </header>
+
+    <main class="container">
+      <section aria-labelledby="tabs-heading" class="pattern-section">
+        <h2 id="tabs-heading">Keyboard Navigable Tabs</h2>
+        <p class="description">
+          A fully accessible tab component. Use <kbd>Tab</kbd> to focus the tablist, then use <kbd>Arrow Right</kbd> and <kbd>Arrow Left</kbd> to navigate between tabs. Focus is managed manually via JavaScript to conform to WAI-ARIA authoring practices.
+        </p>
+        
+        <div class="tabs-component">
+          <div role="tablist" aria-label="Entertainment" class="tablist">
+            <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+              Music
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">
+              Movies
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">
+              Books
+            </button>
+          </div>
+          
+          <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tabpanel">
+            <h3>Music</h3>
+            <p>Content regarding music goes here. Notice how this panel is focusable so screen readers can easily read its contents after a tab is selected.</p>
+          </div>
+          <div id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="tabpanel" hidden>
+            <h3>Movies</h3>
+            <p>Content regarding movies goes here.</p>
+          </div>
+          <div id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" class="tabpanel" hidden>
+            <h3>Books</h3>
+            <p>Content regarding books goes here.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="modal-heading" class="pattern-section">
+        <h2 id="modal-heading">Focus-Trapped Modal</h2>
+        <p class="description">
+          A modal dialog that correctly manages focus state. When opened, focus is moved to the first focusable element inside. While open, focus is trapped within the modal so keyboard users cannot interact with the background. <kbd>Escape</kbd> closes it and returns focus to the trigger button.
+        </p>
+
+        <button id="open-modal-btn" class="primary-btn">Open Settings Modal</button>
+
+        <div id="dialog-overlay" class="dialog-overlay" hidden>
+          <div 
+            role="dialog" 
+            id="settings-dialog" 
+            aria-labelledby="dialog-title" 
+            aria-modal="true" 
+            class="dialog-content"
+          >
+            <h3 id="dialog-title">Profile Settings</h3>
+            <div class="dialog-body">
+              <label for="username">Username</label>
+              <input type="text" id="username" />
+              
+              <label for="notifications">Email Notifications</label>
+              <select id="notifications">
+                <option value="all">All</option>
+                <option value="mentions">Mentions only</option>
+                <option value="none">None</option>
+              </select>
+            </div>
+            <div class="dialog-footer">
+              <button id="close-modal-btn" class="secondary-btn">Cancel</button>
+              <button id="save-modal-btn" class="primary-btn">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
